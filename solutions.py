@@ -14,6 +14,8 @@ def is_sweltering():
       :returns: True if the temperature is over 90, False otherwise.
     """
     # write your code for this function below this line.
+    temp = int(input("请输入当前温度（华氏度）："))
+    return temp > 90
 
 
 def is_warm():
@@ -25,7 +27,8 @@ def is_warm():
       :returns: True if the temperature is between 75 and 87, inclusive, False otherwise.
     """
     # write your code for this function below this line.
-
+    temp = int(input("请输入当前温度（华氏度）："))
+    return 75 <= temp <= 87
 
 def is_humid():
     """
@@ -36,7 +39,8 @@ def is_humid():
       :returns: True if it is humid today, False otherwise.
     """
     # write your code for this function below this line.
-
+    humidity = input("今天是否潮湿？（回答yes或no）：")
+    return humidity.lower() == "yes"
 
 def is_inclement():
     """
@@ -47,6 +51,8 @@ def is_inclement():
       :returns: True if it is raining, snowing, or sleeting today, False otherwise.
     """
     # write your code for this function below this line.
+    forecast = input("今天的天气预报是什么？：")
+    return "雨" in forecast or "雪" in forecast or "雨夹雪" in forecast
 
 
 def is_typical_new_york_summer():
@@ -60,7 +66,7 @@ def is_typical_new_york_summer():
       :returns: True if the temperature is over 90 and it is humid, False otherwise.
     """
     # write your code for this function below this line.
-
+    return is_sweltering() and is_humid()
 
 def is_cool_and_nice():
     """
@@ -72,3 +78,4 @@ def is_cool_and_nice():
       :returns: True if the weather is cool and nice today, False otherwise.
     """
     # write your code for this function below this line.
+    return not (is_sweltering() or is_warm() or is_humid() or is_inclement())
